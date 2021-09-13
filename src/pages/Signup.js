@@ -10,8 +10,16 @@ const Signup = ({ history }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const config = {
+            header: {
+                "Content-Type": "application/json"
+            }
+        }
+
+        console.log(username, name, email, password);
+
         try {
-            const { data } = await axios.post("/auth/signup", { username, name, email, password });
+            const { data } = await axios.post("/auth/signup", { username, name, email, password }, config);
 
             localStorage.setItem("authToken", data.token);
 
