@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Signup = ({ history }) => {
-    const [username, setUsername] = useState("");
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [userName, setUsername] = useState("");
+    const [fullName, setName] = useState("");
+    const [emailId, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (e) => {
@@ -16,14 +16,14 @@ const Signup = ({ history }) => {
             }
         }
 
-        console.log(username, name, email, password);
+        console.log(userName, fullName, emailId, password);
 
         try {
-            const { data } = await axios.post("/auth/signup", { username, name, email, password }, config);
+            const { data } = await axios.post("/auth/signup", { userName, fullName, emailId, password }, config);
 
             localStorage.setItem("authToken", data.token);
 
-            history.push("/login");
+            history.push("/profile");
         } catch (error) {
             console.log(error.message);
         }

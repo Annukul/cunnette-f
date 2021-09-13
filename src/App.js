@@ -10,10 +10,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route path="/signup" exact render={() => <Signup />} />
-        <Route path="/login" exact render={() => <Login />} />
-        <Route path="/create" exact render={() => <Create />} />
-        <Route path="/profile" exact render={() => <Profile />} />
+        <Route path="/signup" exact component={Signup} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/create" exact component={Create} />
+        <Route path="/profile" exact component={Profile} />
       </div>
     </Router>
   );
