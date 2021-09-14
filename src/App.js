@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Create from './pages/Create';
 import Profile from './pages/Profile';
+import Reset from './pages/Reset';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/create" exact component={Create} />
         <Route path="/profile" exact component={Profile} />
+        <Route path="/password-reset" exact component={Reset} />
       </div>
     </Router>
   );
