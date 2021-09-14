@@ -23,7 +23,7 @@ const Signup = ({ history }) => {
 
             localStorage.setItem("authToken", data.token);
 
-            history.push("/profile");
+            history.push("/login");
         } catch (error) {
             console.log(error.message);
         }
