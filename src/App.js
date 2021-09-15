@@ -7,6 +7,7 @@ import Create from './pages/Create';
 import Profile from './pages/Profile';
 import Reset from './pages/Reset';
 import Reset2 from "./pages/Reset2";
+import Confirm from './pages/Confirm';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           exact
           component={Reset2}
         />
+        <Route path="/confirm/:verificationcode" exact component={Confirm} />
       </div>
 
     </Router>
