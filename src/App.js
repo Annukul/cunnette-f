@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Create from './pages/Create';
 import Profile from './pages/Profile';
 import Reset from './pages/Reset';
+import Reset2 from "./pages/Reset2";
+
 
 function App() {
   return (
@@ -16,7 +18,13 @@ function App() {
         <Route path="/create" exact component={Create} />
         <Route path="/profile" exact component={Profile} />
         <Route path="/password-reset" exact component={Reset} />
+        <Route
+          path="/auth/password-reset/:userId/:token"
+          exact
+          component={Reset2}
+        />
       </div>
+
     </Router>
   );
 }
