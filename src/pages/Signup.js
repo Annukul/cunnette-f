@@ -9,7 +9,6 @@ const Signup = ({ history }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const config = {
             header: {
                 "Content-Type": "application/json"
