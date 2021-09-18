@@ -18,12 +18,7 @@ const Reset = ({ history }) => {
 
   return (
     <div>
-      <form
-        method="POST"
-        data-netlify-recaptcha="true"
-        data-netlify="true"
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           type="email"
           name="email"
