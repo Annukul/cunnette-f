@@ -22,7 +22,7 @@ const Reset2 = () => {
 
   return (
     <div>
-      <form method="POST" data-netlify-recaptcha="true" data-netlify="true" onSubmit={passwordResetHandler}>
+      <form onSubmit={passwordResetHandler}>
         <input type="password" onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">Reset</button>
       </form>
