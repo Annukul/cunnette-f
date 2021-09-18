@@ -11,7 +11,10 @@ const Reset2 = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "/auth/password-reset/" + userId + "/" + token,
+        "https://cunnette.herokuapp.com/auth/password-reset/" +
+          userId +
+          "/" +
+          token,
         { password }
       );
       console.log("Success" + data);

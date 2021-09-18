@@ -9,7 +9,10 @@ const Reset = ({ history }) => {
 
     try {
       console.log(emailId);
-      await axios.post("/auth/password-reset-request", { emailId });
+      await axios.post(
+        "https://cunnette.herokuapp.com/auth/password-reset-request",
+        { emailId }
+      );
       history.push("/login");
     } catch (error) {
       console.log(error.message);
