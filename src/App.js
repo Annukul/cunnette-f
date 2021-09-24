@@ -8,6 +8,9 @@ import Profile from './pages/Profile';
 import Reset from './pages/Reset';
 import Reset2 from "./pages/Reset2";
 import Confirm from './pages/Confirm';
+import AddUserDetail from './pages/AddUserDetails';
+import GetUserDetails from './pages/GetUserDetails';
+import UpdateUserDetail from './pages/UpdateUserDetails';
 
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
           component={Reset2}
         />
         <Route path="/confirm/:verificationcode" exact component={Confirm} />
+        <Route path="/adduserdetails" exact component={AddUserDetail} />
+        <Route path="/getuserdetails/:id" exact component={GetUserDetails} />
+        <Route path="/updateuserdetails" exact component={UpdateUserDetail} />
       </div>
 
     </Router>
