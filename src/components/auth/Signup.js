@@ -1,37 +1,45 @@
-import React, { Fragment, useState } from "react";
-import axios from "axios";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { API } from "../config/Api";
+
+import { useDispatch, useSelector } from "react-redux";
+import { register, clearErrors } from "../../actions/userActions";
 
 import "../../App.css";
 
 const Signup = ({ history }) => {
-  const [userName, setUsername] = useState("");
-  const [fullName, setName] = useState("");
-  const [emailId, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    userName: "",
+    fullName: "",
+    emailId: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const { userName, fullName, emailId, password, confirmPassword } = user;
+
+  const dispatch = useDispatch();
+
+  const { isAuthenticated, loading, error } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push("/");
+    }
+  }, [isAuthenticated, history]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const config = {
-      header: {
-        "Content-Type": "application/json",
-      },
-    };
-
-    console.log(userName, fullName, emailId, password);
-
-    try {
-      const { data } = await axios.post(
-        `${API}/auth/signup`,
-        { userName, fullName, emailId, password },
-        config
-      );
-      localStorage.setItem("authToken", data.token);
-      history.push("/login");
-    } catch (error) {
-      console.log(error.message);
+    console.log(userName, fullName, emailId, password, confirmPassword);
+    if (password !== confirmPassword) {
+      return console.log("Password Dosent match");
     }
+    dispatch(register(userName, fullName, emailId, password));
+  };
+
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   return (
@@ -44,32 +52,33 @@ const Signup = ({ history }) => {
           </div>
           <input
             type="text"
-            name="username"
+            name="userName"
             placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={onChange}
           />
           <input
             type="text"
-            name="name"
+            name="fullName"
             placeholder="Full Name"
-            onChange={(e) => setName(e.target.value)}
+            onChange={onChange}
           />
           <input
             type="email"
-            name="email"
+            name="emailId"
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={onChange}
           />
           <input
             type="password"
             name="password"
             placeholder="Create Password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={onChange}
           />
           <input
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
+            onChange={onChange}
           />
           <div class="buttons">
             <button type="submit">Register</button>
