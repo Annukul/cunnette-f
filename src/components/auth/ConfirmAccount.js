@@ -13,7 +13,8 @@ const Confirm = ({ history }) => {
   console.log(verificationcode);
 
   const verify = async () => {
-    await axios.post(`${API}/${verificationcode}`);
+    const verify = await axios.post(`${API}/auth/confirm/${verificationcode}`);
+    console.log(verify);
     setStatus(true);
     setTimeout(() => {
       history.push("/login");

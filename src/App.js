@@ -13,6 +13,7 @@ import GetUserDetails from "./components/GetUserDetails";
 import UpdateUserDetail from "./components/UpdateUserDetails";
 import AuthNavbar from "./components/auth/AuthNavbar";
 import AuthFooter from "./components/auth/AuthFooter";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           />
           <AuthFooter />
         </div>
-
+        <Route path="/home" exact component={Home} />
         <Route path="/create" exact component={Create} />
         <Route path="/profile" exact component={Profile} />
         <Route path="/adduserdetails" exact component={AddUserDetail} />
