@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+
+import { API } from "../config/Api";
 
 const Confirm = ({ history }) => {
   const [status, setStatus] = useState("");
@@ -11,9 +13,7 @@ const Confirm = ({ history }) => {
   console.log(verificationcode);
 
   const verify = async () => {
-    await axios.post(
-      `https://cunnette.herokuapp.com/auth/confirm/${verificationcode}`
-    );
+    await axios.post(`${API}/${verificationcode}`);
     setStatus(true);
     setTimeout(() => {
       history.push("/login");
@@ -21,10 +21,12 @@ const Confirm = ({ history }) => {
   };
 
   return (
-    <div>
-      <button onClick={verify}>Verify</button>
-      {status ? <div>Your email is verified</div> : <div></div>}
-    </div>
+    <Fragment>
+      <div class="lu">
+        <button onClick={verify}>Verify</button>
+        {status ? <div>Your email is verified</div> : <div></div>}
+      </div>
+    </Fragment>
   );
 };
 

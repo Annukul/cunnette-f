@@ -1,0 +1,604 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.dad {
+  /* overflow: hidden; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #000;
+  color: white;
+  background-image: url("./assets/images/6.jpg");
+  /* background-size: 88rem; */
+  /* background-position: right; */
+  background-repeat: no-repeat;
+}
+
+.sec1 {
+  width: 100vw;
+  height: 100vh;
+  /* border: 2px solid rgb(255, 0, 0); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.sec1 #bar {
+  display: none;
+}
+
+.sec1 #cross {
+  display: none;
+}
+
+.sec1 #barcheck {
+  display: none;
+}
+
+.su {
+  width: 100%;
+  height: 55rem;
+  /* border: 2px solid #fff; */
+  font-size: 1.7rem;
+  display: flex;
+}
+
+.su form .dtls,
+.lu form .dtls {
+  width: 40rem;
+  /* padding-left: 1rem; */
+}
+
+.su form .dtls h1,
+.lu form .dtls h1 {
+  font-weight: 900;
+  color: rgb(211, 146, 60);
+  letter-spacing: 0.25rem;
+  /* padding-left: 1rem; */
+}
+
+.su form {
+  /* border: 2px solid black; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 8rem;
+}
+
+.su form input,
+.lu form input {
+  width: 40rem;
+  height: 4.5rem;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  border-radius: 0.5rem;
+  background: rgb(250, 250, 250);
+  border: none;
+  /* box-shadow: 1px 1px 1px 1px rgb(148, 0, 216); */
+}
+
+.su form .buttons,
+.lu form .buttons {
+  margin-top: 1.5rem;
+  width: 40rem;
+}
+
+.su form .buttons button,
+.lu form .buttons button {
+  width: 9rem;
+  height: 3.5rem;
+  color: rgb(252, 252, 252);
+  margin-right: 5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgb(211, 146, 60);
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 7%;
+  /* border: 2px solid white; */
+}
+
+.nav li {
+  list-style: none;
+  display: inline;
+  font-size: 1.7rem;
+  margin: 0 2rem;
+  transition: border 0.1s ease-in-out;
+}
+
+.sec1 footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 7%;
+  /* border: 2px solid white; */
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  color: #fff;
+}
+
+.sec1 footer .icons i {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  transition: color 0.1s;
+}
+
+.sec1 footer .icons i:hover {
+  color: rgb(102, 102, 255);
+  cursor: pointer;
+}
+
+.sec1 .nav li:hover {
+  border-bottom: 1.5px solid rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.sec1 form button:hover {
+  background: rgb(252, 252, 252);
+  color: rgb(211, 146, 60);
+}
+
+/* ++++++++++++++++++++++++++++++++ Log In +++++++++++++++++++++++++++++++ */
+
+.lu {
+  width: 100%;
+  height: 55rem;
+  /* border: 2px solid #fff; */
+  font-size: 1.7rem;
+  display: flex;
+}
+
+.lu form {
+  /* border: 2px solid black; */
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 8rem;
+}
+
+.lu #fp {
+  align-self: flex-start;
+}
+
+/* +++++++++++++++++++++++++ Media Query ++++++++++++++++++++++++++ */
+
+/* phone: (Portrait) */
+
+@media only screen and (max-width: 481px) {
+  html {
+    max-width: 100vw;
+    height: 100vh;
+    font-size: 100%;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+  }
+  .dad {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #000;
+    color: white;
+    background-image: url("./assets/images/6.jpg");
+    /* background-size: 88rem; */
+    /* background-position: right; */
+    background-repeat: no-repeat;
+  }
+  .sec1 #bar,
+  .sec1 #cross {
+    display: block;
+    color: white;
+    font-size: 150%;
+    position: absolute;
+    top: 2%;
+    left: 4.2%;
+    z-index: 2;
+    transition: color 0.4s step-end;
+  }
+  .sec1 #cross {
+    display: none;
+    transition: color 0.4s;
+  }
+  .sec1 #barcheck {
+    display: block;
+    /* opacity: 0;
+         */
+    position: absolute;
+    height: 2rem;
+    width: 6%;
+    top: 2%;
+    left: 4.2%;
+    z-index: 5;
+    opacity: 0;
+  }
+  .nav {
+    color: black;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    display: none;
+    width: 75%;
+    /* border: 2px solid yellowgreen; */
+    height: 100%;
+    display: block;
+    background: rgba(255, 252, 248, 0.911);
+    /* border-top-right-radius: 0.5rem; */
+    /* border-bottom-right-radius: 0.5rem; */
+    /* display: none; */
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+  #barcheck[type="checkbox"]:checked ~ .nav {
+    display: block;
+    transform: translateX(0%);
+    box-shadow: 1px 2px 7px 0.1px rgba(0, 0, 0, 0.274);
+  }
+  #barcheck[type="checkbox"]:checked ~ #bar {
+    display: none;
+  }
+  #barcheck[type="checkbox"]:checked ~ #cross {
+    display: block;
+    color: rgb(170, 170, 170);
+  }
+  .nav ul {
+    font-weight: 600;
+    margin-top: 20%;
+    /* border: 2px solid red; */
+    height: 85%;
+  }
+  .nav li {
+    list-style: none;
+    display: block;
+    font-size: 100%;
+    margin: 0;
+    transition: border 0.1s ease-in-out;
+    /* border: 2px solid rgb(0, 216, 0); */
+    padding: 25px 20px;
+    width: 100%;
+    box-shadow: -3px 1px rgb(255, 236, 212);
+    /* color: white; */
+  }
+  .su {
+    margin-top: 25%;
+    height: 55%;
+    /* border: 2px solid #fff; */
+    /* font-size: 80% */
+  }
+  .su form .dtls,
+  .lu form .dtls {
+    /* border: 2px solid green; */
+    width: 90%;
+    /* padding-left: 1rem; */
+    /* margin-left: 10rem; */
+  }
+  .su form .dtls h1,
+  .lu form .dtls h1 {
+    font-size: 80%;
+  }
+  .su form .dtls p,
+  .lu form .dtls p {
+    font-size: 50%;
+  }
+  .su form {
+    margin-left: 0;
+    width: inherit;
+  }
+  .su form input,
+  .lu form input {
+    width: 90%;
+    height: 2.5rem;
+    font-size: 0.7rem;
+    padding-left: 0.6rem;
+    box-shadow: 1px 2px 7px 0.1px rgba(0, 0, 0, 0.274);
+  }
+  .su form .buttons,
+  .lu form .buttons {
+    /* border: 2px solid red; */
+    /* width: 30rem; */
+    height: 10%;
+    margin-top: 2%;
+    display: inline;
+    width: 90%;
+  }
+  .su form .buttons button,
+  .lu form .buttons button {
+    font-size: 0.7rem;
+    letter-spacing: 0.04rem;
+    width: 100%;
+    height: 2.5rem;
+    margin-right: 0;
+    margin: 0.5rem 0;
+    box-shadow: 1px 2px 7px 0.1px rgba(0, 0, 0, 0.274);
+  }
+  .sec1 footer {
+    height: 5%;
+    /* border: 2px solid white; */
+    font-size: 70%;
+    padding: 0 0.7rem;
+  }
+  .sec1 footer .icons i {
+    color: #fff;
+    font-size: 130%;
+    margin-left: 0.2rem;
+    transition: color 0.1s;
+  }
+  .sec1 footer .icons i:hover {
+    color: white;
+  }
+  .sec1 footer .icons i:active {
+    color: rgb(133, 133, 201);
+  }
+  .sec1 .nav li:hover {
+    border-bottom: none;
+    cursor: pointer;
+  }
+  .sec1 .nav li:active {
+    color: #fff;
+    cursor: pointer;
+    background: rgba(211, 145, 60, 0.692);
+  }
+  .sec1 form button:hover {
+    background: rgb(211, 146, 60);
+    color: rgb(252, 252, 252);
+  }
+  .sec1 form button:active {
+    background: rgb(252, 252, 252);
+    color: rgb(211, 146, 60);
+  }
+  /* ++++++++++++++++++++++++++++++++ Log In +++++++++++++++++++++++++++++++ */
+  .lu {
+    margin-top: 25%;
+    width: 100%;
+    height: 30rem;
+    /* border: 2px solid #fff; */
+    display: flex;
+    justify-content: center;
+  }
+  .lu form {
+    /* border: 2px solid black; */
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+  .lu #fp {
+    margin-top: -5%;
+    margin-left: 5%;
+    align-self: flex-start;
+    /* border: 2px solid red; */
+    font-size: 0.8rem;
+  }
+  .lu form .buttons {
+    /* border: 2px solid red; */
+    /* width: 30rem; */
+    height: auto;
+    margin-top: -7%;
+    display: inline;
+    width: 90%;
+  }
+  .lu form .buttons button {
+    font-size: 0.8rem;
+    width: 100%;
+    height: 2.2rem;
+    margin-right: 0;
+    margin: 1rem 1rem 0 0;
+  }
+}
+
+/* phone: (landscape) */
+
+@media only screen and (min-width: 481px) and (max-width: 813px) and (orientation: landscape) {
+  .dad {
+    /* overflow: hidden; */
+    /* border: 2px solid greenyellow; */
+    height: 560px;
+  }
+  .sec1 {
+    height: 100%;
+    /* border: 2px solid rgb(255, 0, 0); */
+  }
+  .su,
+  .lu {
+    height: 50rem;
+    /* border: 2px solid #fff; */
+    font-size: 1.5rem;
+    /* margin-bottom: 40px; */
+    margin-top: 5rem;
+  }
+  .su form input,
+  .lu form input {
+    height: 4rem;
+    font-size: 1.4rem;
+    /* box-shadow: 1px 1px 1px 1px rgb(148, 0, 216); */
+  }
+  .su form .buttons button,
+  .lu form .buttons button {
+    width: 8rem;
+    height: 3.2rem;
+  }
+  .nav {
+    height: 10%;
+    /* border: 2px solid white; */
+  }
+  .nav li {
+    font-size: 1.5rem;
+  }
+  .sec1 footer {
+    height: 15%;
+    /* border: 2px solid white; */
+    font-size: 1.2rem;
+  }
+  .sec1 footer .icons i {
+    margin-left: 0.4rem;
+    font-size: 2rem;
+  }
+  .sec1 footer .icons i:active {
+    color: rgb(102, 102, 255);
+    cursor: pointer;
+  }
+  .sec1 footer .icons i:hover {
+    color: none;
+    cursor: none;
+  }
+  .sec1 .nav li:hover {
+    border-bottom: none;
+    cursor: none;
+  }
+  .sec1 .nav li:active {
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  .sec1 form button:hover {
+    color: none;
+    background: none;
+  }
+  .sec1 form button:active {
+    background: rgb(252, 252, 252);
+    color: rgb(211, 146, 60);
+  }
+  .lu #fp {
+    display: block;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    margin-top: 0;
+  }
+}
+
+/* tablet: (portrait) */
+
+@media only screen and (min-width: 768px) and (orientation: Portrait) {
+  .sec1 {
+    width: 100vw;
+    height: 100vh;
+    /* border: 2px solid rgb(255, 0, 0); */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+  .su {
+    width: 100%;
+    height: 55rem;
+    /* border: 2px solid #fff; */
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .su form .dtls,
+  .lu form .dtls {
+    width: 50rem;
+    /* padding-left: 1rem; */
+  }
+  .su form .dtls h1,
+  .lu form .dtls h1 {
+    font-weight: 900;
+    color: rgb(211, 146, 60);
+    letter-spacing: 0.25rem;
+    /* padding-left: 1rem; */
+  }
+  .su form {
+    /* border: 2px solid black; */
+    margin-left: 0;
+  }
+  .su form input,
+  .lu form input {
+    width: 50rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    /* box-shadow: 1px 1px 1px 1px rgb(148, 0, 216); */
+  }
+  .su form .buttons,
+  .lu form .buttons {
+    margin-top: 1.5rem;
+    width: 50rem;
+  }
+  .su form .buttons button,
+  .lu form .buttons button {
+    width: 12rem;
+    height: 4rem;
+  }
+  .nav li {
+    font-size: 2rem;
+    transition: border 0.1s ease-in-out;
+  }
+  .sec1 footer {
+    height: 4%;
+    /* border: 2px solid white; */
+  }
+  .sec1 footer .icons i {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    transition: color 0.1s;
+  }
+  .sec1 footer .icons i:hover {
+    color: none;
+    cursor: none;
+  }
+  .sec1 footer .icons i:active {
+    color: rgb(102, 102, 255);
+    cursor: pointer;
+  }
+  .sec1 .nav li:hover {
+    border-bottom: none;
+    cursor: none;
+  }
+  .sec1 .nav li:active {
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  .sec1 form button:hover {
+    background: none;
+    color: none;
+  }
+  .sec1 form button:active {
+    background: rgb(252, 252, 252);
+    color: rgb(211, 146, 60);
+  }
+  /* ++++++++++++++++++++++++++++++++ Log In +++++++++++++++++++++++++++++++ */
+  .lu {
+    width: 100%;
+    height: 55rem;
+    /* border: 2px solid #fff; */
+    font-size: 1.7rem;
+    display: flex;
+  }
+  .lu form {
+    /* border: 2px solid black; */
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 8rem;
+  }
+  .lu #fp {
+    align-self: flex-start;
+  }
+}
