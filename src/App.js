@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Signup from "./components/auth/Signup";
@@ -15,7 +15,13 @@ import AuthNavbar from "./components/auth/AuthNavbar";
 import AuthFooter from "./components/auth/AuthFooter";
 import Home from "./components/Home";
 
+import { loadUser } from "./actions/userActions";
+import store from "./store";
+
 function App() {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
     <Router>
       <div className="dad">
