@@ -44,9 +44,9 @@ const Signup = ({ history }) => {
 
   return (
     <Fragment>
-      <div class="su">
+      <div className="su">
         <form onSubmit={handleSubmit}>
-          <div class="dtls">
+          <div className="dtls">
             <h1>SIGN UP</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
@@ -80,7 +80,7 @@ const Signup = ({ history }) => {
             placeholder="Confirm Password"
             onChange={onChange}
           />
-          <div class="buttons">
+          <div className="buttons">
             <button type="submit">Register</button>
             <Link to="/login">
               <button>Login</button>
