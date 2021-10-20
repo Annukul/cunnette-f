@@ -31,9 +31,9 @@ const Login = ({ history }) => {
 
   return (
     <Fragment>
-      <div class="lu">
+      <div className="lu">
         <form onSubmit={loginHandler}>
-          <div class="dtls">
+          <div className="dtls">
             <h1>LOG IN</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
@@ -52,7 +52,7 @@ const Login = ({ history }) => {
           <Link to="/password-reset" id="fp">
             Forgot Password?
           </Link>
-          <div class="buttons">
+          <div className="buttons">
             <button type="submit">Login</button>
             <Link to="/signup">
               <button>Register</button>

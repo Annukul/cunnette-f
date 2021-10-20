@@ -23,7 +23,7 @@ const Confirm = ({ history }) => {
 
   return (
     <Fragment>
-      <div class="lu">
+      <div className="lu">
         <button onClick={verify}>Verify</button>
         {status ? <div>Your email is verified</div> : <div></div>}
       </div>

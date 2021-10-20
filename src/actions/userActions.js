@@ -26,7 +26,6 @@ export const login = (userName, password) => async (dispatch) => {
     const { data } = await axios.post(
       `${API}/auth/login`,
       { userName, password },
-      { withCredentials: true, credentials: "include" },
       config
     );
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });

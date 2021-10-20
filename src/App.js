@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       <div className="dad">
-        <div class="sec1">
+        <div className="sec1">
           <AuthNavbar />
           <Route path={["/signup", "/register"]} exact component={Signup} />
           <Route path={["/", "/login"]} exact component={Login} />
