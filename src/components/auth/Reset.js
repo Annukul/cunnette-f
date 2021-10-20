@@ -24,9 +24,9 @@ const Reset2 = () => {
 
   return (
     <Fragment>
-      <div class="su">
+      <div className="su">
         <form onSubmit={passwordResetHandler}>
-          <div class="dtls">
+          <div className="dtls">
             <h1>RESET PASSWORD</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
@@ -43,7 +43,7 @@ const Reset2 = () => {
             placeholder="Confirm Password"
           />
 
-          <div class="buttons">
+          <div className="buttons">
             <button type="submit">Reset</button>
           </div>
         </form>

@@ -19,9 +19,9 @@ const Reset = ({ history }) => {
 
   return (
     <Fragment>
-      <div class="su">
+      <div className="su">
         <form onSubmit={handleSubmit}>
-          <div class="dtls">
+          <div className="dtls">
             <h1>RESET PASSWORD REQUEST</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
@@ -32,7 +32,7 @@ const Reset = ({ history }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <div class="buttons">
+          <div className="buttons">
             <button type="submit">Send Reset Mail</button>
           </div>
         </form>

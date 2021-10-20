@@ -6,9 +6,9 @@ const AuthNavbar = () => {
   return (
     <Fragment>
       <input type="checkbox" name="" id="barcheck" />
-      <i id="cross" class="fas fa-times"></i>
-      <i id="bar" class="fas fa-bars"></i>
-      <div class="nav">
+      <i id="cross" className="fas fa-times"></i>
+      <i id="bar" className="fas fa-bars"></i>
+      <div className="nav">
         <ul>
           <li>About</li>
           <li>Home</li>
