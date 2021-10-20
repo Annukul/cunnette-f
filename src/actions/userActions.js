@@ -8,6 +8,9 @@ import {
   REGISTER_FAIL,
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
+  LOAD_USER_REQUEST,
+  LOAD_USER_SUCCESS,
+  LOAD_USER_FAIL,
 } from "../constants/userConstants";
 
 // Login
@@ -51,6 +54,17 @@ export const register =
       dispatch({ type: REGISTER_FAIL, payload: error.response.data.message });
     }
   };
+
+// Load User
+export const loadUser = () => async (dispatch) => {
+  try {
+    dispatch({ type: LOAD_USER_REQUEST });
+    const { data } = await axios.get(`${API}/auth/me`);
+    dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
+  } catch (error) {
+    dispatch({ type: LOAD_USER_FAIL, payload: error.response.data.message });
+  }
+};
 
 // Clear Error
 export const clearErrors = () => async (dispatch) => {
